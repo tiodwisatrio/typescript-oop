@@ -10,6 +10,6 @@ describe('CLASS', () => {
 
 
         const customer: Customer = new Customer();
-        const order: Order = new Order();
+        const order = new Order();
     })
  })
