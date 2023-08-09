@@ -14,7 +14,16 @@ describe("Polymorphism", () => {
     }
 
     const sayHello = (employee: Employee) => {
-        console.log(`Hello ${employee.name}`)
+        // console.log(`Hello ${employee.name}`)
+        if (employee instanceof VicePresident) {
+            const vp = employee as VicePresident;
+            console.log(`Hello Vice President ${employee.name}`)
+        } else if (employee instanceof Manager) {
+            const manager = employee as Manager;
+            console.log(`Hello Manager ${employee.name}`)
+        } else {
+            console.log(`Hello ${employee.name}`)
+        }
     }
 
     it("Should support polymorphism", () => {
@@ -36,8 +45,6 @@ describe("Polymorphism", () => {
         sayHello(new Manager("Budi"));
         sayHello(new VicePresident("Tio"));
 
-
-        
     })
 
 
